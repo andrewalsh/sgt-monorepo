@@ -21,6 +21,8 @@ import br.com.aws.sgt.domain.Socio_;
 public class SocioFilter implements FiltroAbstrato<Socio>{
 	
 	private String cpfSelecionado;
+	private int page = 0;
+	private int size = 10;
 
 	@Override
 	public Selection[] configureProjection(CriteriaBuilder cb, Root<Socio> root) {
@@ -52,9 +54,10 @@ public class SocioFilter implements FiltroAbstrato<Socio>{
 	}
 	
 	@Override
-	public List<Expression<Socio>> groupBy(CriteriaBuilder cb, Root<Socio> root) {
+	public Expression<?>[] groupBy(CriteriaBuilder cb, Root<Socio> root) {
+		List<Expression<?>> expressions = new ArrayList<>();
 		// TODO Auto-generated method stub
-		return new ArrayList<>();
+		return expressions.toArray(new Expression<?>[expressions.size()]);
 	}
 
 	public String getCpfSelecionado() {
@@ -64,6 +67,17 @@ public class SocioFilter implements FiltroAbstrato<Socio>{
 		this.cpfSelecionado = cpfSelecionado;
 	}
 
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
 	
-	
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
 }

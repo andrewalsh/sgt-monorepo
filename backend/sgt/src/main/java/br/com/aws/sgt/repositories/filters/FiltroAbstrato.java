@@ -18,7 +18,7 @@ public interface FiltroAbstrato<T>{
 	
 	List<Order> orderBy(CriteriaBuilder cb, Root<T> root);
 	
-	List<Expression<T>> groupBy(CriteriaBuilder cb, Root<T> root);
+	Expression<?>[] groupBy(CriteriaBuilder cb, Root<T> root);
 	
 	default String paramLikeFormated(String param) {
 		StringBuilder sb = new StringBuilder();
