@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.aws.sgt.dto.SocioDTO;
 import br.com.aws.sgt.repositories.filters.SocioFilter;
 import br.com.aws.sgt.service.SocioService;
+import io.swagger.annotations.Api;
 
+@Api(value = "Socios", description = "Socios")
 @RequestMapping("/socios")
 @RestController
 public class SocioResource {
